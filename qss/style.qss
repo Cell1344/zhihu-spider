@@ -1,0 +1,27 @@
+QToolBox::tab {
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+}
+
+QToolBox::tab:selected {
+	background-color: rgb(170, 85, 255);
+}
+
+/*子页面*/
+QToolBox QWidget {
+	background-color: rgba(170, 255, 255, 100);
+	border-radius: 10px;
+}
+
+#frame_preview_ans {
+	background-color: rgb(255, 255, 255);
+	border-radius: 20px;
+}
+
+.QStackedWidget {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,
+	 								  stop:0 rgba(0, 170, 255, 150),
+									  stop:1 rgba(170, 170, 255, 150));
+	/*background-color: rgb(255, 255, 255);*/
+	border-radius: 20px;
+}

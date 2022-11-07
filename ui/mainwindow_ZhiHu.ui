@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>740</width>
+    <height>638</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>知乎爬虫</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabWidgetPage_ans">
+       <attribute name="title">
+        <string>回答爬取</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QToolBox" name="toolBox_answer">
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page_target_ans">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>346</width>
+             <height>442</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>目标设置</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QLabel" name="label_url_ans">
+                <property name="text">
+                 <string>网址：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_url_ans">
+                <property name="placeholderText">
+                 <string>url</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>304</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_sig_ans">
+              <property name="text">
+               <string>未执行</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_get_ans">
+              <property name="text">
+               <string>获取网页</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_edit_ans">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>346</width>
+             <height>442</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>文本编辑</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QTextEdit" name="textEdit_model_ans">
+              <property name="placeholderText">
+               <string>编辑模板</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_importmodel_ans">
+              <property name="text">
+               <string>导入已有模板</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_exportmodel_ans">
+              <property name="text">
+               <string>存为模板</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_set_ans">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>346</width>
+             <height>442</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>设置</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QGroupBox" name="groupBox_set_ans">
+              <property name="title">
+               <string>模板设置</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <widget class="QTableWidget" name="tableWidget_sub_ans">
+                 <property name="autoScrollMargin">
+                  <number>16</number>
+                 </property>
+                 <attribute name="horizontalHeaderVisible">
+                  <bool>true</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderCascadingSectionResizes">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderDefaultSectionSize">
+                  <number>200</number>
+                 </attribute>
+                 <attribute name="horizontalHeaderHighlightSections">
+                  <bool>true</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="verticalHeaderVisible">
+                  <bool>true</bool>
+                 </attribute>
+                 <attribute name="verticalHeaderDefaultSectionSize">
+                  <number>30</number>
+                 </attribute>
+                 <row>
+                  <property name="text">
+                   <string>问题标题</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>问题叙述</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>作者信息</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>回答正文</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>回答时间</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>tag列表</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>赞数</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>评论数</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>url</string>
+                  </property>
+                 </row>
+                 <column>
+                  <property name="text">
+                   <string>对应内容</string>
+                  </property>
+                 </column>
+                 <item row="0" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="1" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="2" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="3" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="4" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="5" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="6" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_setmodel_ans">
+                 <property name="text">
+                  <string>设置模板</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="Line" name="line_ans">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_file_ans">
+              <property name="title">
+               <string>导出文件</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_3">
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_filename_ans">
+                   <property name="placeholderText">
+                    <string>文件名</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_filetype_ans">
+                   <item>
+                    <property name="text">
+                     <string>.md</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>.txt</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                 <item>
+                  <widget class="QCommandLinkButton" name="commandLinkButton_filedir_ans">
+                   <property name="styleSheet">
+                    <string notr="true">QCommandLinkButton {
+	font: 9pt;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>文件夹路径</string>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_setdir_ans">
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>更改文件夹</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_preview_ans">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="label_preview_ans">
+             <property name="text">
+              <string>预览</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="textEdit_preview_ans">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="markdown">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>预览</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_savefile_ans">
+             <property name="text">
+              <string>保存</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabWidgetPage_art">
+       <attribute name="title">
+        <string>文章爬取</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <item>
+         <widget class="QToolBox" name="toolBox_article">
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page_target_art">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>346</width>
+             <height>442</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>目标设置</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QLabel" name="label_url_art">
+                <property name="text">
+                 <string>网址：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_url_art">
+                <property name="placeholderText">
+                 <string>url</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>304</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_sig_art">
+              <property name="text">
+               <string>未执行</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_get_art">
+              <property name="text">
+               <string>获取网页</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_edit_art">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>149</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>文本编辑</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="QTextEdit" name="textEdit_model_art">
+              <property name="placeholderText">
+               <string>编辑模板</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_importmodel_art">
+              <property name="text">
+               <string>导入已有模板</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_exportmodel_art">
+              <property name="text">
+               <string>存为模板</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_set_art">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>273</width>
+             <height>392</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>设置</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <item>
+             <widget class="QGroupBox" name="groupBox_set_art">
+              <property name="title">
+               <string>模板设置</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
+               <item>
+                <widget class="QTableWidget" name="tableWidget_sub_art">
+                 <property name="autoScrollMargin">
+                  <number>16</number>
+                 </property>
+                 <attribute name="horizontalHeaderVisible">
+                  <bool>true</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderCascadingSectionResizes">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderDefaultSectionSize">
+                  <number>200</number>
+                 </attribute>
+                 <attribute name="horizontalHeaderHighlightSections">
+                  <bool>true</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="verticalHeaderVisible">
+                  <bool>true</bool>
+                 </attribute>
+                 <attribute name="verticalHeaderDefaultSectionSize">
+                  <number>30</number>
+                 </attribute>
+                 <row>
+                  <property name="text">
+                   <string>背景图</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>文章标题</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>作者信息</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>文章正文</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>时间信息</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>tag列表</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>赞数</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>评论数</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>url</string>
+                  </property>
+                 </row>
+                 <column>
+                  <property name="text">
+                   <string>对应内容</string>
+                  </property>
+                 </column>
+                 <item row="0" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="1" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="2" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="3" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="4" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="5" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="6" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_setmodel_art">
+                 <property name="text">
+                  <string>设置模板</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="Line" name="line_art">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_file_art">
+              <property name="title">
+               <string>导出文件</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_12">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_filename_art">
+                   <property name="placeholderText">
+                    <string>文件名</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_filetype_art">
+                   <item>
+                    <property name="text">
+                     <string>.md</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>.txt</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <item>
+                  <widget class="QCommandLinkButton" name="commandLinkButton_filedir_art">
+                   <property name="styleSheet">
+                    <string notr="true">QCommandLinkButton {
+	font: 9pt;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>文件夹路径</string>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_setdir_art">
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>更改文件夹</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_preview_ans_2">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QLabel" name="label_preview_art">
+             <property name="text">
+              <string>预览</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="textEdit_preview_art">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="markdown">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>预览</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_savefile_art">
+             <property name="text">
+              <string>保存</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>740</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
